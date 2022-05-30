@@ -1,0 +1,129 @@
+@import "./variables";
+@import "./mixins";
+@import "./breakpoints";
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+@include small-mobile {
+    html {
+        font-size: 50%;
+    }
+}
+
+@include mobile {
+    html {
+        font-size: 50%;
+    }
+}
+@include tablet {
+    html {
+        font-size: 70%;
+    }
+}
+
+body {
+    background: $background;
+    color: $color;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    font-size: $header-font + 0.5;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    text-align: center;
+    background-image: linear-gradient(top, rgb(241, 217, 181), rgb(255, 217, 0));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.main {
+    .header {
+        font-size: $header-font;
+        text-align: center;
+        margin: 2%;
+        text-transform: capitalize;
+
+        &::before {
+            content: "••••";
+            padding-right: 1rem;
+        }
+        &::after {
+            content: "••••";
+            padding-left: 1rem;
+        }
+    }
+}
+
+.main-game-box {
+    width: 40%;
+    height: 70vh;
+    position: relative;
+    top: 50%;
+    left: 30%;
+    display: grid;
+    justify-content: center;
+    align-items: centers;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    .box {
+        border: 0.2px solid white;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $header-font + 10;
+
+        &:hover {
+            background-color: aqua;
+            color: black;
+            cursor: pointer;
+        }
+    }
+}
+
+.main-reset-btn,
+.game-info {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+
+    .reset-btn {
+        @include btn;
+    }
+
+    .info {
+        font-size: $sub-header-font;
+    }
+}
+
+.main-reset-btn {
+    margin-top: 2rem;
+}
+
+.game-result {
+    position: absolute;
+    top: 35%;
+    text-align: center;
+    width: 100%;
+    display: none;
+
+    .result {
+        background: url("https://media1.giphy.com/media/xT0GqkbKlg3wuaETVS/200.webp?cid=ecf05e47zpv7i30eb12380k4p7y7xm4zyy2jvm85bnj7vhrw&rid=200.webp&ct=g") center;
+        font-size: 10vw;
+        text-transform: uppercase;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
