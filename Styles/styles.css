@@ -10,13 +10,13 @@ html {
   font-size: 10px;
 }
 
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 360px) {
   html {
     font-size: 50%;
   }
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (max-width: 480px) {
   html {
     font-size: 50%;
   }
@@ -83,10 +83,32 @@ body {
   -webkit-box-align: centers;
       -ms-flex-align: centers;
           align-items: centers;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
+  -ms-grid-columns: (20em)[3];
+      grid-template-columns: repeat(3, 20em);
+  -ms-grid-rows: (20em)[3];
+      grid-template-rows: repeat(3, 20em);
+}
+
+@media only screen and (max-width: 360px) {
+  .main-game-box {
+    width: 80%;
+    left: 0%;
+    margin: auto;
+    height: auto;
+    -ms-grid-columns: (15em)[3];
+        grid-template-columns: repeat(3, 15em);
+    -ms-grid-rows: (15em)[3];
+        grid-template-rows: repeat(3, 15em);
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  .main-game-box {
+    -ms-grid-columns: (30em)[3];
+        grid-template-columns: repeat(3, 30em);
+    -ms-grid-rows: (30em)[3];
+        grid-template-rows: repeat(3, 30em);
+  }
 }
 
 .main-game-box .box {
@@ -121,6 +143,13 @@ body {
           justify-content: center;
 }
 
+@media only screen and (min-width: 1450px) {
+  .main-reset-btn,
+  .game-info {
+    margin-top: 25em;
+  }
+}
+
 .main-reset-btn .reset-btn,
 .game-info .reset-btn {
   width: 7.5rem;
@@ -141,6 +170,14 @@ body {
   cursor: pointer;
   color: white;
   background: #6b1745;
+}
+
+@media only screen and (max-width: 360px) {
+  .main-reset-btn .reset-btn,
+  .game-info .reset-btn {
+    min-width: 70px;
+    min-height: 25px;
+  }
 }
 
 .main-reset-btn .info,

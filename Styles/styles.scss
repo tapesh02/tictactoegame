@@ -73,8 +73,22 @@ body {
     display: grid;
     justify-content: center;
     align-items: centers;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 20em);
+    grid-template-rows: repeat(3, 20em);
+
+    @include small-mobile {
+        width: 80%;
+        left: 0%;
+        margin: auto;
+        height: auto;
+        grid-template-columns: repeat(3, 15em);
+        grid-template-rows: repeat(3, 15em);
+    }
+
+    @include HDdesktop {
+        grid-template-columns: repeat(3, 30em);
+        grid-template-rows: repeat(3, 30em);
+    }
 
     .box {
         border: 0.2px solid white;
@@ -98,8 +112,17 @@ body {
     display: flex;
     justify-content: center;
 
+    @include HDdesktop {
+        margin-top: 25em;
+    }
+
     .reset-btn {
         @include btn;
+
+        @include small-mobile {
+            min-width: 70px;
+            min-height: 25px;
+        }
     }
 
     .info {
